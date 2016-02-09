@@ -33,7 +33,7 @@ Each slide file should export an object with 2 properties: `content` and `notes`
 This component adds a link to your presentation.
 
 |Name|PropType|Default|Description|
-|---|---|---|
+|---|---|---|---|
 | href | PropTypes.string.isRequired | - | Link target |
 | external | PropTypes.bool | `true` | Open in new tab |
 | children | PropTypes.node | `<Icon name="external-link" />` | Clickable text or node |
@@ -42,7 +42,7 @@ This component adds a link to your presentation.
 This component adds a code editor to your presentation.
 
 |Name|PropType|Default|Description|
-|---|---|---|
+|---|---|---|---|
 | value | PropTypes.string | - | Initial code value |
 | language | PropTypes.string | javascript | [Language](https://codemirror.net/mode/index.html) used in code editor |
 | theme | PropTypes.string | monokai | [Theme](https://codemirror.net/theme/) used in code editor |
@@ -51,7 +51,7 @@ This component adds a code editor to your presentation.
 This component adds any FontAwesome icon to your presentation.
 
 |Name|PropType|Default|Description|
-|---|---|---|
+|---|---|---|---|
 | name | PropTypes.string.isRequired | - | Name of the [FontAwesome](https://fortawesome.github.io/Font-Awesome/icons/) icon without the `fa-` prefix |
 | size | PropTypes.string | - | Size of the icon (lg, 2x, 3x, 4x, 5x) |
 
@@ -59,7 +59,7 @@ This component adds any FontAwesome icon to your presentation.
 This component adds a button redirecting to any slide of your presentation.
 
 |Name|PropType|Default|Description|
-|---|---|---|
+|---|---|---|---|
 | slide | PropTypes.number.isRequired | - | Index of slide you want to redirect to, starts with 0 |
 | type | PropTypes.string | `button` | `button` or `link` |
 | children | PropTypes.node | `Go To Slide #x` | Clickable text or node |
