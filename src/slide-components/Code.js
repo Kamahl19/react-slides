@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import CodeMirror from 'react-codemirror';
-import {transform} from 'babel-standalone';
+import { transform } from 'babel-standalone';
 
 import 'codemirror/addon/hint/show-hint';
 import 'codemirror/addon/hint/javascript-hint';
@@ -33,9 +33,25 @@ export default class Code extends Component {
         theme: 'monokai',
     };
 
+    constructor(props) {
+        super(props);
+
+        this.onChange = ::this.onChange;
+    }
+
     state = {
         code: this.props.value,
     };
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.value !== nextProps.value) {
+            this.refs.codeMirror.getCodeMirror().setValue(nextProps.value);
+        }
+    }
+
+    onChange(code) {
+        this.setState({ code });
+    }
 
     codeMirrorOptions = {
         mode: this.props.language,
@@ -62,26 +78,15 @@ export default class Code extends Component {
         autoCloseBrackets: true,
     };
 
-    constructor(props) {
-        super(props);
-
-        this.onChange = ::this.onChange;
-    }
-
-    componentWillReceiveProps(nextProps) {
-        if (this.props.value !== nextProps.value) {
-            this.refs.codeMirror.getCodeMirror().setValue(nextProps.value);
-        }
-    }
-
-    onChange(code) {
-        this.setState({ code });
-    }
-
     render() {
         return (
             <div className="code">
-                <CodeMirror value={this.state.code} onChange={this.onChange} options={this.codeMirrorOptions} ref="codeMirror" />
+                <CodeMirror
+                    value={this.state.code}
+                    onChange={this.onChange}
+                    options={this.codeMirrorOptions}
+                    ref="codeMirror"
+                />
             </div>
         );
     }

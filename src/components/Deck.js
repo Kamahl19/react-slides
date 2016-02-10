@@ -55,7 +55,11 @@ export default class Deck extends Component {
         const { target, keyCode } = e;
 
         // Ignore keys usable in textarea if fired from textarea
-        if (target.type === 'textarea' && (keyCode === keyCodes.leftArrow || keyCode === keyCodes.rightArrow || keyCode === keyCodes.space)) {
+        if (target.type === 'textarea' && (
+                keyCode === keyCodes.leftArrow ||
+                keyCode === keyCodes.rightArrow ||
+                keyCode === keyCodes.space
+            )) {
             return;
         }
 
@@ -80,6 +84,7 @@ export default class Deck extends Component {
             case keyCodes.F10:
                 togglePresenter();
                 break;
+            default:
         }
     }
 

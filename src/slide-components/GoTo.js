@@ -1,9 +1,10 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { goToSlide } from '../actions/presentation';
 
 class GoTo extends Component {
     static propTypes = {
+        boundGoToSlide: PropTypes.func.isRequired,
         slide: PropTypes.number.isRequired,
         type: PropTypes.string,
         children: PropTypes.node,
@@ -46,10 +47,8 @@ class GoTo extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        boundGoToSlide: (slide) => dispatch(goToSlide(slide))
-    };
-}
+const mapDispatchToProps = (dispatch) => ({
+    boundGoToSlide: (slide) => dispatch(goToSlide(slide))
+});
 
 export default connect(undefined, mapDispatchToProps)(GoTo);

@@ -42,6 +42,6 @@ const presentation = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
 
 export default presentation;
