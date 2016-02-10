@@ -91,7 +91,7 @@ export default class Deck extends Component {
     renderDeckContainer() {
         const { currentSlide, presenter } = this.props;
 
-        const transform = (presenter) ? {
+        const { translateX, translateY, scale } = (presenter) ? {
             translateX: (currentSlide + 2) * 50 * -1,
             translateY: -25,
             scale: 0.5,
@@ -103,7 +103,7 @@ export default class Deck extends Component {
 
         const style = {
             width: `${slides.length * 100}vw`,
-            transform: `translate(${transform.translateX}vw, ${transform.translateY}vh) scale(${transform.scale})`,
+            transform: `translate(${translateX}vw, ${translateY}vh) scale(${scale})`,
         };
 
         return (
@@ -121,7 +121,7 @@ export default class Deck extends Component {
         const notes = slides[currentSlide].notes || [];
 
         const className = cx('deck', {
-            presenter: presenter
+            presenter
         });
 
         return (

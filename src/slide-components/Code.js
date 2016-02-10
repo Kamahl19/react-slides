@@ -1,3 +1,5 @@
+/* eslint no-new-func:0 */
+
 import React, { Component, PropTypes } from 'react';
 import CodeMirror from 'react-codemirror';
 import { transform } from 'babel-standalone';
@@ -58,17 +60,17 @@ export default class Code extends Component {
         theme: this.props.theme,
         extraKeys: {
             'Ctrl-Space': 'autocomplete',
-            'F9': () => {
+            F9: () => {
                 if (this.props.language !== 'javascript') {
                     return;
                 }
 
                 new Function(babelTransform(this.state.code))();
             },
-            'F11': (cm) => {
+            F11: (cm) => {
                 cm.setOption('fullScreen', !cm.getOption('fullScreen'));
             },
-            'Esc': (cm) => {
+            Esc: (cm) => {
                 if (cm.getOption('fullScreen')) {
                     cm.setOption('fullScreen', false);
                 }

@@ -1,10 +1,12 @@
-var path = require('path');
-var express = require('express');
-var webpack = require('webpack');
-var config = require('./webpack/config.dev');
+/* eslint no-console:0 */
 
-var app = express();
-var compiler = webpack(config);
+const path = require('path');
+const express = require('express');
+const webpack = require('webpack');
+const config = require('./webpack/config.dev');
+
+const app = express();
+const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
@@ -15,11 +17,11 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.use('/public', express.static('public'));
 
-app.get('*', function(req, res) {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(3000, 'localhost', function(err) {
+app.listen(3000, (err) => {
     if (err) {
         console.log(err);
         return;
