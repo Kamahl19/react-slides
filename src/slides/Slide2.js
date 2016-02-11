@@ -19,7 +19,7 @@ const f = () => d;
 console.log(a, b, c, d, f());`;
 
 export default {
-    content: [
+    content: (
         <div>
 
             <h1>Code Editor</h1>
@@ -29,7 +29,7 @@ export default {
             <GoTo slide={0} />
 
         </div>
-    ],
+    ),
     notes: [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',

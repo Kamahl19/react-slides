@@ -3,7 +3,7 @@ import Link from '../slide-components/Link';
 import Icon from '../slide-components/Icon';
 
 export default {
-    content: [
+    content: (
         <div>
 
             <h1>Welcome</h1>
@@ -15,7 +15,7 @@ export default {
             </ul>
 
         </div>
-    ],
+    ),
     notes: [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
