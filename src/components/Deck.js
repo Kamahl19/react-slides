@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 import Slide from './Slide';
 import Progress from './Progress';
+import Timer from './Timer';
 import SlideNotes from './SlideNotes';
 import slides from '../slides/index';
 import './deck.less';
@@ -126,6 +127,7 @@ export default class Deck extends Component {
 
         return (
             <div className={className}>
+                { (presenter) ? (<Timer />) : undefined }
                 {this.renderDeckContainer()}
                 { (presenter) ? (<SlideNotes notes={notes} />) : undefined }
                 <Progress slidesCount={slides.length} currentSlide={currentSlide} />
