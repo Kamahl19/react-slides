@@ -93,7 +93,7 @@ export default class Deck extends Component {
         const { currentSlide, presenter } = this.props;
 
         const { translateX, translateY, scale } = (presenter) ? {
-            translateX: (currentSlide + 2) * 50 * -1,
+            translateX: currentSlide * 50 * -1 - (slides.length / 2 * 50),
             translateY: -25,
             scale: 0.5,
         } : {
