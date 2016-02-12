@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import Presenter from './Presenter';
 import Slide from './Slide';
 import Progress from './Progress';
-import slides from '../slides/index';
 import './deck.less';
 
 const keyCodes = {
@@ -16,6 +15,7 @@ const keyCodes = {
 
 export default class Deck extends Component {
     static propTypes = {
+        slides: PropTypes.array.isRequired,
         nextSlide: PropTypes.func.isRequired,
         previousSlide: PropTypes.func.isRequired,
         goToSlide: PropTypes.func.isRequired,
@@ -37,7 +37,7 @@ export default class Deck extends Component {
     }
 
     synchronizeCurrentSlide(e) {
-        const { goToSlide, currentSlide } = this.props;
+        const { goToSlide, currentSlide, slides } = this.props;
 
         if (e.key === 'currentSlide') {
             const newValue = +e.newValue;
@@ -62,7 +62,7 @@ export default class Deck extends Component {
             return;
         }
 
-        const { nextSlide, previousSlide, togglePresenter, currentSlide } = this.props;
+        const { nextSlide, previousSlide, togglePresenter, currentSlide, slides } = this.props;
 
         switch (keyCode) {
             case keyCodes.leftArrow:
@@ -88,7 +88,7 @@ export default class Deck extends Component {
     }
 
     renderDeckContainer() {
-        const { currentSlide, presenter } = this.props;
+        const { currentSlide, presenter, slides } = this.props;
 
         const { translateX, translateY, scale } = (presenter) ? {
             translateX: currentSlide * 50 * -1 - (slides.length / 2 * 50),
@@ -115,7 +115,7 @@ export default class Deck extends Component {
     }
 
     render() {
-        const { currentSlide, presenter } = this.props;
+        const { currentSlide, presenter, slides } = this.props;
 
         const notes = slides[currentSlide].notes;
 

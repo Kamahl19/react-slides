@@ -65,6 +65,5 @@ This component adds a button redirecting to any slide of your presentation.
 | children | PropTypes.node | `Go To Slide #x` | Clickable text or node |
 
 ## To-Do
-- separate slide files from the actuall application (best option would be to create a boilerplate which will use react-slides as a dependency)
 - customizing themes
 - synchronize opening fullscreen code editor

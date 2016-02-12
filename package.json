@@ -1,50 +1,35 @@
 {
   "name": "react-slides",
   "version": "0.1.0",
-  "description": "Presentation tool built using React",
-  "author": {
-    "name": "Martin Litvaj",
-    "email": "kamahl19@gmail.com",
-    "url": "http://litvaj.com"
-  },
-  "license": "MIT",
+  "description": "Presentation library based on ReactJS",
+  "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack/config.prod.js",
-    "build": "npm run clean && npm run build:webpack",
-    "start": "node devServer.js",
-    "lint": "eslint src webpack devServer.js"
+    "build": "babel src --out-dir lib --source-maps inline --copy-files",
+    "postinstall": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamahl19/react-slides.git"
+  },
+  "author": "Martin Litvaj <kamahl19@gmail.com> (http://litvaj.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kamahl19/react-slides/issues"
+  },
+  "homepage": "https://github.com/Kamahl19/react-slides#readme",
   "devDependencies": {
-    "babel-core": "^6.4.5",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^5.0.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-react": "^3.16.1"
+  },
+  "dependencies": {
     "babel-eslint": "^5.0.0-beta10",
-    "babel-loader": "^6.2.2",
+    "babel-cli": "^6.5.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.1.0",
     "babel-preset-stage-0": "^6.3.13",
-    "cross-env": "^1.0.7",
-    "css-loader": "^0.23.1",
-    "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^5.0.0",
-    "eslint-plugin-babel": "^3.1.0",
-    "eslint-plugin-react": "^3.16.1",
-    "express": "^4.13.4",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "less": "^2.6.0",
-    "less-loader": "^2.2.2",
-    "redux-devtools": "^3.1.0",
-    "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.4",
-    "rimraf": "^2.5.1",
-    "style-loader": "^0.13.0",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.12.13",
-    "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.6.4"
-  },
-  "dependencies": {
     "babel-standalone": "^6.4.4",
     "classnames": "^2.2.3",
     "codemirror": "^5.11.0",
@@ -55,6 +40,9 @@
     "react-codemirror": "^0.2.5",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
+    "redux-devtools": "^3.1.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.4",
     "redux": "^3.3.1",
     "redux-thunk": "^1.0.3"
   }
