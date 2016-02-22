@@ -1,16 +1,22 @@
 .code {
     .CodeMirror {
         height: auto;
-        max-height: 300px;
+
+        .CodeMirror-scroll {
+            max-height: 300px;
+        }
 
         &.CodeMirror-fullscreen {
             width: 100vw;
             height: 100vw;
-            max-height: 100vw;
             position: absolute;
             top: 0;
             left: 0;
             z-index: 9999;
+
+            .CodeMirror-scroll {
+                max-height: 100vw;
+            }
 
             .CodeMirror-line {
                 font-size: 2rem;
