@@ -46,6 +46,7 @@ This component adds a code editor to your presentation.
 | value | PropTypes.string | - | Initial code value |
 | language | PropTypes.string | javascript | [Language](https://codemirror.net/mode/index.html) used in code editor |
 | theme | PropTypes.string | monokai | [Theme](https://codemirror.net/theme/) used in code editor |
+| useBabel | PropTypes.bool | true | Transpile ES.Next to ES5  |
 
 ### Icon
 This component adds any FontAwesome icon to your presentation.

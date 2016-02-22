@@ -27,12 +27,14 @@ export default class Code extends Component {
         value: PropTypes.string,
         language: PropTypes.string,
         theme: PropTypes.string,
+        useBabel: PropTypes.bool,
     };
 
     static defaultProps = {
         value: '',
         language: 'javascript',
         theme: 'monokai',
+        useBabel: true,
     };
 
     constructor(props) {
@@ -65,7 +67,9 @@ export default class Code extends Component {
                     return;
                 }
 
-                new Function(babelTransform(this.state.code))();
+                const code = (this.props.useBabel) ? babelTransform(this.state.code) : this.state.code;
+
+                new Function(code)();
             },
             F11: (cm) => {
                 cm.setOption('fullScreen', !cm.getOption('fullScreen'));
