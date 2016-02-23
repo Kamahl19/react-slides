@@ -1,7 +1,10 @@
 import { NEXT_SLIDE, PREVIOUS_SLIDE, GO_TO_SLIDE, TOGGLE_PRESENTER } from '../actions/presentation';
 
+const currentSlide = localStorage.getItem('currentSlide');
+const initialSlide = (currentSlide === null) ? 0 : parseInt(currentSlide, 10);
+
 const initialState = {
-    currentSlide: 0,
+    currentSlide: initialSlide,
     presenter: false,
 };
 
