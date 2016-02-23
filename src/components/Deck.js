@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import cx from 'classnames';
 import Presenter from './Presenter';
 import Slide from './Slide';
 import Progress from './Progress';
@@ -11,6 +12,7 @@ const keyCodes = {
     next: 176,
     space: 32,
     F10: 121,
+    F11: 122,
 };
 
 export default class Deck extends Component {
@@ -26,6 +28,10 @@ export default class Deck extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            fullScreenCode: false,
+        };
 
         this.handleKeyDown = ::this.handleKeyDown;
         this.synchronizeCurrentSlide = ::this.synchronizeCurrentSlide;
@@ -59,6 +65,14 @@ export default class Deck extends Component {
                 keyCode === keyCodes.rightArrow ||
                 keyCode === keyCodes.space
             )) {
+            return;
+        }
+
+        if (target.type === 'textarea' && keyCode === keyCodes.F11 && shiftKey) {
+            this.setState({
+                fullScreenCode: !this.state.fullScreenCode,
+            });
+
             return;
         }
 
@@ -107,8 +121,12 @@ export default class Deck extends Component {
             transform: `translate(${translateX}vw, ${translateY}vh) scale(${scale})`,
         };
 
+        const className = cx('deck-container', {
+            'fullscreen-code': !!this.state.fullScreenCode
+        });
+
         return (
-            <div className="deck-container" style={style}>
+            <div className={className} style={style}>
                 {slides.map((slide, idx) =>
                     <Slide key={idx}>{slide.content}</Slide>
                 )}
