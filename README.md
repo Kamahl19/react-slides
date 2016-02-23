@@ -29,15 +29,6 @@ Each slide file should export an object with 2 properties: `content` and `notes`
 - `notes` is `optional` and may contain an array of strings representing your notes shown in Presenter mode
 
 ## Preddefined Components
-### Link
-This component adds a link to your presentation.
-
-|Name|PropType|Default|Description|
-|---|---|---|---|
-| href | PropTypes.string.isRequired | - | Link target |
-| external | PropTypes.bool | `true` | Open in new tab |
-| children | PropTypes.node | `<Icon name="external-link" />` | Clickable text or node |
-
 ### Code
 This component adds a code editor to your presentation.
 
@@ -47,6 +38,22 @@ This component adds a code editor to your presentation.
 | language | PropTypes.string | javascript | [Language](https://codemirror.net/mode/index.html) used in code editor |
 | theme | PropTypes.string | monokai | [Theme](https://codemirror.net/theme/) used in code editor |
 | useBabel | PropTypes.bool | true | Transpile ES.Next to ES5  |
+
+### Link
+This component adds a link to your presentation.
+
+|Name|PropType|Default|Description|
+|---|---|---|---|
+| href | PropTypes.string.isRequired | - | Link target |
+| external | PropTypes.bool | `true` | Open in new tab |
+| children | PropTypes.node | `<Icon name="external-link" />` | Clickable text or node |
+
+### Markdown
+This component adds support for markdown.
+
+|Name|PropType|Default|Description|
+|---|---|---|---|
+| source | PropTypes.string.isRequired | - | Markdown source |
 
 ### Icon
 This component adds any FontAwesome icon to your presentation.
