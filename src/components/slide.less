@@ -5,13 +5,22 @@
     position: relative;
 
     .content {
+        position: absolute;
+        top: ~"calc(50% - 16px)";
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: ~"calc(100vh - 32px)";
         width: 100vw;
-        height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
+        overflow: hidden;
+        overflow-y: auto;
         font-size: 2rem;
         line-height: 4rem;
+
+        .presenter & {
+            max-height: none;
+        }
 
         h1, h2 {
             margin: 0;
