@@ -71,7 +71,7 @@ export default class Code extends Component {
 
                 new Function(code)();
             },
-            'Shift-F11': (cm) => {
+            'Alt-a': (cm) => {
                 cm.setOption('fullScreen', !cm.getOption('fullScreen'));
             },
             Esc: (cm) => {

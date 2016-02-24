@@ -13,6 +13,7 @@ const keyCodes = {
     space: 32,
     F10: 121,
     F11: 122,
+    a: 65,
 };
 
 export default class Deck extends Component {
@@ -57,7 +58,7 @@ export default class Deck extends Component {
     }
 
     handleKeyDown(e) {
-        const { target, keyCode, shiftKey } = e;
+        const { target, keyCode, shiftKey, altKey } = e;
 
         // Ignore keys usable in textarea if fired from textarea
         if (target.type === 'textarea' && (
@@ -68,7 +69,7 @@ export default class Deck extends Component {
             return;
         }
 
-        if (target.type === 'textarea' && keyCode === keyCodes.F11 && shiftKey) {
+        if (keyCode === keyCodes.a && altKey) {
             this.setState({
                 fullScreenCode: !this.state.fullScreenCode,
             });
