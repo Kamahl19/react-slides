@@ -12,7 +12,6 @@ const keyCodes = {
     next: 176,
     space: 32,
     F10: 121,
-    F11: 122,
     Esc: 27,
 };
 

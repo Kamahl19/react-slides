@@ -62,7 +62,7 @@ export default class Code extends Component {
         theme: this.props.theme,
         extraKeys: {
             'Ctrl-Space': 'autocomplete',
-            'Shift-F9': () => {
+            'Ctrl-Enter': () => {
                 if (this.props.language !== 'javascript') {
                     return;
                 }
