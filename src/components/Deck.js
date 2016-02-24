@@ -57,7 +57,7 @@ export default class Deck extends Component {
     }
 
     handleKeyDown(e) {
-        const { target, keyCode } = e;
+        const { target, keyCode, shiftKey } = e;
 
         // Ignore keys usable in textarea if fired from textarea
         if (target.type === 'textarea' && (
