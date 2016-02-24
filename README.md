@@ -16,9 +16,8 @@ Presentation Library based on ReactJS
 |Media Button Previous|Previous Slide|
 |Space|Next Slide|
 |Shift + F10|Toggle Presenter Mode|
-|Shift + F9 while focus in Code Editor|Run JS code from Code Editor|
-|Shift + F11 while focus in Code Editor|Toggle Fullscreen Mode of Code Editor|
-|ESC while focus in Code Editor|Escape Fullscreen Mode of Code Editor|
+|Ctrl + Enter while focus in Code Editor|Run JS code from Code Editor|
+|ESC while focus in Code Editor|Toggle Fullscreen Mode of Code Editor|
 
 ## Creating Presentation
 Files representing presentation slides will live in `/src/slides` folder.
