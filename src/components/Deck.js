@@ -11,7 +11,7 @@ const keyCodes = {
     previous: 177,
     next: 176,
     space: 32,
-    P: 80,
+    F11: 122,
     Enter: 13,
 };
 
@@ -57,7 +57,7 @@ export default class Deck extends Component {
     }
 
     handleKeyDown(e) {
-        const { target, keyCode, altKey } = e;
+        const { target, keyCode, shiftKey } = e;
 
         // Ignore keys usable in textarea if fired from textarea
         if (target.type === 'textarea' && (
@@ -68,7 +68,7 @@ export default class Deck extends Component {
             return;
         }
 
-        if (target.type === 'textarea' && keyCode === keyCodes.Enter) {
+        if (target.type === 'textarea' && keyCode === keyCodes.F11 && shiftKey) {
             this.setState({
                 fullScreenCode: !this.state.fullScreenCode,
             });
@@ -95,7 +95,7 @@ export default class Deck extends Component {
                 break;
 
             case keyCodes.P:
-                if (altKey) {
+                if (shiftKey) {
                     togglePresenter();
                 }
                 break;
