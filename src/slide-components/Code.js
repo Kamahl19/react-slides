@@ -71,13 +71,8 @@ export default class Code extends Component {
 
                 new Function(code)();
             },
-            'Alt-a': (cm) => {
+            'Esc': (cm) => {
                 cm.setOption('fullScreen', !cm.getOption('fullScreen'));
-            },
-            Esc: (cm) => {
-                if (cm.getOption('fullScreen')) {
-                    cm.setOption('fullScreen', false);
-                }
             },
         },
         styleActiveLine: true,
