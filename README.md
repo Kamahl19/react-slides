@@ -15,9 +15,10 @@ Presentation Library based on ReactJS
 |Media Button Next|Next Slide|
 |Media Button Previous|Previous Slide|
 |Space|Next Slide|
-|Alt + P|Toggle Presenter Mode|
-|Alt + R while focus in Code Editor|Run JS code from Code Editor|
-|Alt + Enter while focus in Code Editor|Toggle Fullscreen Mode of Code Editor|
+|Shift + F10|Toggle Presenter Mode|
+|Shift + F9 while focus in Code Editor|Run JS code from Code Editor|
+|Shift + F11 while focus in Code Editor|Toggle Fullscreen Mode of Code Editor|
+|ESC while focus in Code Editor|Escape Fullscreen Mode of Code Editor|
 
 ## Creating Presentation
 Files representing presentation slides will live in `/src/slides` folder.
@@ -73,8 +74,9 @@ This component adds a button redirecting to any slide of your presentation.
 | children | PropTypes.node | `Go To Slide #x` | Clickable text or node |
 
 ## To-Do
-- support different transition animations
+- better progress bar
 - auto play (Alt + Space)
+- support different transition animations
 - synchronize opening fullscreen code editor, mouse, events
 - fix Code editor in presenter mode (cursor and selected line are 50% smaller)
 - better theme customization ?

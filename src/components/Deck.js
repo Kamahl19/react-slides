@@ -57,7 +57,7 @@ export default class Deck extends Component {
     }
 
     handleKeyDown(e) {
-        const { target, keyCode, shiftKey } = e;
+        const { target, keyCode, altKey } = e;
 
         // Ignore keys usable in textarea if fired from textarea
         if (target.type === 'textarea' && (
@@ -95,7 +95,7 @@ export default class Deck extends Component {
                 break;
 
             case keyCodes.P:
-                if (shiftKey) {
+                if (altKey) {
                     togglePresenter();
                 }
                 break;
