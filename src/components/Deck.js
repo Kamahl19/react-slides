@@ -11,8 +11,8 @@ const keyCodes = {
     previous: 177,
     next: 176,
     space: 32,
-    F10: 121,
-    Esc: 27,
+    P: 80,
+    Enter: 13,
 };
 
 export default class Deck extends Component {
@@ -68,7 +68,7 @@ export default class Deck extends Component {
             return;
         }
 
-        if (/*target.type === 'textarea' && */keyCode === keyCodes.Esc) {
+        if (target.type === 'textarea' && keyCode === keyCodes.Enter) {
             this.setState({
                 fullScreenCode: !this.state.fullScreenCode,
             });
@@ -94,7 +94,7 @@ export default class Deck extends Component {
                 }
                 break;
 
-            case keyCodes.F10:
+            case keyCodes.P:
                 if (shiftKey) {
                     togglePresenter();
                 }

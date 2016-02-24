@@ -62,7 +62,7 @@ export default class Code extends Component {
         theme: this.props.theme,
         extraKeys: {
             'Ctrl-Space': 'autocomplete',
-            'Ctrl-Enter': () => {
+            'Alt-R': () => {
                 if (this.props.language !== 'javascript') {
                     return;
                 }
@@ -71,7 +71,7 @@ export default class Code extends Component {
 
                 new Function(code)();
             },
-            'Esc': (cm) => {
+            'Alt-Enter': (cm) => {
                 cm.setOption('fullScreen', !cm.getOption('fullScreen'));
             },
         },
