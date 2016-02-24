@@ -74,4 +74,9 @@ This component adds a button redirecting to any slide of your presentation.
 
 ## To-Do
 - customizing themes
-- synchronize opening fullscreen code editor
+- synchronize opening fullscreen code editor, mouse, events
+- auto play
+- fixnut shortcuts - alt+p, alt+r, alt+enter
+- fix code editor in presenter mode
+- prop height for Code
+- support different animations
