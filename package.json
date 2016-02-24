@@ -30,7 +30,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-react-hmre": "^1.1.0",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-standalone": "Daniel15/babel-standalone",
+    "babel-standalone": "^6.4.4",
     "classnames": "^2.2.3",
     "codemirror": "^5.12.0",
     "font-awesome": "^4.5.0",
