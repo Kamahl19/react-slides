@@ -2,7 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { goToSlide } from '../actions/presentation';
 
-class GoTo extends Component {
+const mapDispatchToProps = (dispatch) => ({
+    boundGoToSlide: (slide) => dispatch(goToSlide(slide))
+});
+
+@connect(undefined, mapDispatchToProps)
+export default class GoTo extends Component {
     static propTypes = {
         boundGoToSlide: PropTypes.func.isRequired,
         slide: PropTypes.number.isRequired,
@@ -14,13 +19,7 @@ class GoTo extends Component {
         type: 'button',
     };
 
-    constructor(props) {
-        super(props);
-
-        this.goTo = ::this.goTo;
-    }
-
-    goTo() {
+    goTo = () => {
         const { boundGoToSlide, slide } = this.props;
 
         boundGoToSlide(slide);
@@ -46,9 +45,3 @@ class GoTo extends Component {
         return (type === 'button') ? this.renderButton(content) : this.renderLink(content);
     }
 }
-
-const mapDispatchToProps = (dispatch) => ({
-    boundGoToSlide: (slide) => dispatch(goToSlide(slide))
-});
-
-export default connect(undefined, mapDispatchToProps)(GoTo);

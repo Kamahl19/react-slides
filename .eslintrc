@@ -1,8 +1,10 @@
 {
   "extends": "airbnb",
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    sourceType: "module"
   },
   "env": {
     "es6": true,
@@ -11,6 +13,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
+    "max-len": 0,
     "func-names": 0,
     "comma-dangle": 0,
     "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
@@ -27,6 +30,8 @@
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
+    "react/jsx-no-bind": 0,
+    "react/prefer-stateless-function": 0
   },
   "plugins": [
     "babel",

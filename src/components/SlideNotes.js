@@ -10,7 +10,9 @@ export default class SlideNotes extends Component {
         const { notes } = this.props;
 
         if (!notes.length) {
-            return (<div></div>);
+            return (
+                <div />
+            );
         }
 
         return (

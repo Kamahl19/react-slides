@@ -11,8 +11,8 @@ const keyCodes = {
     previous: 177,
     next: 176,
     space: 32,
+    F10: 121,
     F11: 122,
-    Enter: 13,
 };
 
 export default class Deck extends Component {
@@ -32,9 +32,6 @@ export default class Deck extends Component {
         this.state = {
             fullScreenCode: false,
         };
-
-        this.handleKeyDown = ::this.handleKeyDown;
-        this.synchronizeCurrentSlide = ::this.synchronizeCurrentSlide;
     }
 
     componentDidMount() {
@@ -42,7 +39,7 @@ export default class Deck extends Component {
         window.addEventListener('storage', this.synchronizeCurrentSlide);
     }
 
-    synchronizeCurrentSlide(e) {
+    synchronizeCurrentSlide = (e) => {
         const { goToSlide, currentSlide, slides } = this.props;
 
         if (e.key === 'currentSlide') {
@@ -56,7 +53,7 @@ export default class Deck extends Component {
         }
     }
 
-    handleKeyDown(e) {
+    handleKeyDown = (e) => {
         const { target, keyCode, shiftKey } = e;
 
         // Ignore keys usable in textarea if fired from textarea
@@ -94,7 +91,7 @@ export default class Deck extends Component {
                 }
                 break;
 
-            case keyCodes.P:
+            case keyCodes.F10:
                 if (shiftKey) {
                     togglePresenter();
                 }

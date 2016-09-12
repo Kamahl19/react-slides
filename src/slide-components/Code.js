@@ -1,5 +1,4 @@
 /* eslint no-new-func:0 */
-
 import React, { Component, PropTypes } from 'react';
 import CodeMirror from 'react-codemirror';
 import { transform } from 'babel-standalone';
@@ -37,12 +36,6 @@ export default class Code extends Component {
         useBabel: true,
     };
 
-    constructor(props) {
-        super(props);
-
-        this.onChange = ::this.onChange;
-    }
-
     state = {
         code: this.props.value,
     };
@@ -53,7 +46,7 @@ export default class Code extends Component {
         }
     }
 
-    onChange(code) {
+    onChange = (code) => {
         this.setState({ code });
     }
 

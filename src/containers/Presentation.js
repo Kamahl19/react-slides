@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(PresentationActions, dispatch);
 
+@connect(mapStateToProps, mapDispatchToProps)
 export default class Presentation extends Component {
     static propTypes = {
         currentSlide: PropTypes.number.isRequired,
@@ -26,5 +27,3 @@ export default class Presentation extends Component {
         );
     }
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Presentation);

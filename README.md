@@ -74,8 +74,9 @@ This component adds a button redirecting to any slide of your presentation.
 | children | PropTypes.node | `Go To Slide #x` | Clickable text or node |
 
 ## To-Do
+- fix key bindings
 - better progress bar
-- auto play (Alt + Space)
+- auto play (Shift + Space)
 - support different transition animations
 - synchronize opening fullscreen code editor, mouse, events
 - fix Code editor in presenter mode (cursor and selected line are 50% smaller)
