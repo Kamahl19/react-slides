@@ -15,6 +15,10 @@ export default class ReactSlides extends Component {
     constructor(props) {
         super(props);
 
+        if (localStorage.getItem('currentSlide') >= this.props.slides.length) {
+            localStorage.setItem('currentSlide', 0);
+        }
+
         this.store = configureStore();
     }
 
