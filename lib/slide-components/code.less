@@ -1,0 +1,34 @@
+.code {
+    margin-top: 20px;
+
+    .CodeMirror {
+        height: auto;
+
+        .CodeMirror-scroll {
+            max-height: 300px;
+        }
+
+        &.CodeMirror-fullscreen {
+            width: 100vw;
+            height: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+
+            .CodeMirror-scroll {
+                max-height: 100vw;
+            }
+
+            .CodeMirror-line {
+                font-size: 2rem;
+                line-height: 3.3rem;
+            }
+        }
+
+        .CodeMirror-line {
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+    }
+}

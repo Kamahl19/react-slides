@@ -2,7 +2,6 @@
 *.sublime-workspace
 *.log
 logs
-lib
 .DS_Store
 node_modules
 dist

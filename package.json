@@ -4,8 +4,7 @@
   "description": "Presentation library based on ReactJS",
   "main": "lib/main.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production babel src --out-dir lib --source-maps inline --copy-files",
-    "postinstall": "npm run build"
+    "build": "cross-env NODE_ENV=production babel src --out-dir lib --source-maps inline --copy-files"
   },
   "repository": {
     "type": "git",
